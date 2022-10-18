@@ -159,6 +159,23 @@ for first_cycle in dep_gecici:
                         print("--> cyclic dep: " + first_cycle[0] + " is dependent on " + first_cycle[1] + ", AND " + first_cycle[1] + " is dependent on " + third_cycle[1])
                         print("")
 print("********************")
+print("\n\n")
+print("********************")
+
+print("A->B->C->D->A tipi cyclic dependency olan classlar yazdiriliyor...")
+print("---")
+for first_cycle in dep_gecici:
+    for second_cycle in dep_gecici:
+        for third_cycle in dep_gecici:
+            for fourth_cycle in dep_gecici:
+                if(first_cycle[0] == second_cycle[1]):
+                    if(second_cycle[0] == third_cycle[1]):
+                        if(third_cycle[0] == fourth_cycle[1]):
+                            if(fourth_cycle[0] == first_cycle[1]):
+                                print("--> cyclic dep: " + first_cycle[0] + " is dependent on " + first_cycle[1] + ", " + first_cycle[1] + " is dependent on " + third_cycle[0] + ", " + third_cycle[0] + " is dependent on " + third_cycle[1] + " AND " + third_cycle[1] + " is dependent on " + first_cycle[0])
+                                print("")
+print("********************")
+print("\n\n")
 
 #tek excel için doldurmaya başla
 for pure_item in pure_list:
